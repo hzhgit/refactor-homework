@@ -98,3 +98,10 @@ rankTest('case 9 : test voyageProfitFactor length=4 && zone=china && has no hist
   t.is(voyageProfitFactor(voyage,[]), 3)
 })
 
+rankTest('case 10 : test voyageProfitFactor length=4 && zone=east-indies', t => {
+  const voyage = {
+    zone: 'east-indies',
+    length: 4
+  }
+  t.is(voyageProfitFactor(voyage, history), 3)
+})
