@@ -1,0 +1,15 @@
+const deliveryTest = require('ava');
+const { deliveryDate } = require('../src/delivery');
+
+deliveryTest('case 1:isRush is ture && deliveryState is MA', t => {
+    const anOrder = {
+        deliveryState: 'MA',
+        placedOn: {
+            plusDays: (deliveryTime) => {
+                return deliveryTime;
+            }
+        }
+    }
+
+    t.is(2, deliveryDate(anOrder, true))
+})
