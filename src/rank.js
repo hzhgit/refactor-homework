@@ -77,7 +77,8 @@ function rating (voyage, history) {
 module.exports = {
   voyageRisk,
   rating,
-  captainHistoryRisk
+  captainHistoryRisk,
+  voyageProfitFactor
 };
 
 const voyage = {
