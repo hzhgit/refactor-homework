@@ -39,3 +39,16 @@ deliveryTest('case 3:isRush is false && deliveryState is MA', t => {
 
     t.is(4, deliveryDate(anOrder, false))
 })
+
+deliveryTest('case 4:isRush is false && deliveryState is ME', t => {
+    const anOrder = {
+        deliveryState: 'ME',
+        placedOn: {
+            plusDays: (deliveryTime) => {
+                return deliveryTime;
+            }
+        }
+    }
+
+    t.is(5, deliveryDate(anOrder, false))
+})
