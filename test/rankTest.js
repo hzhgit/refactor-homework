@@ -1,5 +1,5 @@
 const rankTest = require('ava');
-const { voyageRisk, rating } = require("../src/rank");
+const { voyageRisk, rating, captainHistoryRisk } = require("../src/rank");
 
 rankTest('case1 : test voyageRisk length=4 && zone=china', t => {
   const voyage = {
@@ -52,8 +52,8 @@ rankTest('case 4 : test rating length=5 && zone=china', t => {
     length: 5,
   };
 
-  const rank = rating(voyage,history.slice(0,5))
-  t.is('A',rank)
+  const rank = rating(voyage, history.slice(0, 5))
+  t.is('A', rank)
 });
 
 rankTest('case 5 : test rating length=5 && zone=east-indies', t => {
@@ -62,6 +62,14 @@ rankTest('case 5 : test rating length=5 && zone=east-indies', t => {
     length: 5,
   };
 
-  const rank = rating(voyage,history.slice(0,5))
-  t.is('B',rank)
+  const rank = rating(voyage, history.slice(0, 5))
+  t.is('B', rank)
 });
+
+rankTest('case 6 : test captainHistoryRisk length=4 && zone=china', t => {
+  const voyage = {
+    zone: 'china',
+    length: 4
+  }
+  t.is(captainHistoryRisk(voyage, history), 4)
+})
