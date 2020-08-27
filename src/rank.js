@@ -1,4 +1,4 @@
-const destination = [
+const DESTINATION = [
   'china',
   'east-indies',
 ];
@@ -11,7 +11,7 @@ function voyageRisk (voyage) {
   if (voyage.length > 8) {
     result += voyage.length - 8;
   }
-  if (destination.includes(voyage.zone)) {
+  if (DESTINATION.includes(voyage.zone)) {
     result += 4;
   }
   return Math.max(result, 0);
