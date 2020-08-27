@@ -65,3 +65,16 @@ deliveryTest('case 5:isRush is true && deliveryState is not in the deliveryState
 
     t.is(4, deliveryDate(anOrder, true))
 })
+
+deliveryTest('case 6:isRush is false && deliveryState is not in the deliveryState', t => {
+    const anOrder = {
+        deliveryState: 'XX',
+        placedOn: {
+            plusDays: (deliveryTime) => {
+                return deliveryTime;
+            }
+        }
+    }
+
+    t.is(6, deliveryDate(anOrder, false))
+})
