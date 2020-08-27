@@ -1,15 +1,11 @@
 function isRushTrue(anOrder){
+  const nearPort = ['MA','CT']
+  const farPort = ['NY','NH']
   let deliveryTime;
-  if ([
-    'MA',
-    'CT',
-  ].includes(anOrder.deliveryState)) {
+  if (nearPort.includes(anOrder.deliveryState)) {
     deliveryTime = 1;
   }
-  else if ([
-    'NY',
-    'NH',
-  ].includes(anOrder.deliveryState)) {
+  else if (farPort.includes(anOrder.deliveryState)) {
     deliveryTime = 2;
   }
   else {
@@ -19,18 +15,13 @@ function isRushTrue(anOrder){
 }
 
 function isRushFalse(anOrder){
+  const nearPort = ['MA','CT','NY',];
+  const farPort = ['ME','NH',];
   let deliveryTime;
-  if ([
-    'MA',
-    'CT',
-    'NY',
-  ].includes(anOrder.deliveryState)) {
+  if (nearPort.includes(anOrder.deliveryState)) {
     deliveryTime = 2;
   }
-  else if ([
-    'ME',
-    'NH',
-  ].includes(anOrder.deliveryState)) {
+  else if (farPort.includes(anOrder.deliveryState)) {
     deliveryTime = 3;
   }
   else {
