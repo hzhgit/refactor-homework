@@ -105,3 +105,11 @@ rankTest('case 10 : test voyageProfitFactor length=4 && zone=east-indies', t => 
   }
   t.is(voyageProfitFactor(voyage, history), 3)
 })
+
+rankTest('case 11 : test voyageProfitFactor length=4 && zone=east-indies && has no history', t => {
+  const voyage = {
+    zone: 'east-indies',
+    length: 4
+  }
+  t.is(voyageProfitFactor(voyage, []), 3)
+})
