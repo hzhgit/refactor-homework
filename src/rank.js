@@ -1,3 +1,8 @@
+const destination = [
+  'china',
+  'east-indies',
+];
+
 function voyageRisk (voyage) {
   let result = 1;
   if (voyage.length > 4) {
@@ -6,10 +11,7 @@ function voyageRisk (voyage) {
   if (voyage.length > 8) {
     result += voyage.length - 8;
   }
-  if ([
-    'china',
-    'east-indies',
-  ].includes(voyage.zone)) {
+  if (destination.includes(voyage.zone)) {
     result += 4;
   }
   return Math.max(result, 0);
@@ -63,15 +65,10 @@ function voyageProfitFactor (voyage, history) {
 }
 
 function rating (voyage, history) {
-  const vpf = voyageProfitFactor(voyage, history);
-  const vr = voyageRisk(voyage);
-  const chr = captainHistoryRisk(voyage, history);
-  if (vpf * 3 > (vr + chr * 2)) {
-    return 'A';
-  }
-  else {
-    return 'B';
-  }
+    const vpf = voyageProfitFactor(voyage, history);
+    const vr = voyageRisk(voyage);
+    const chr = captainHistoryRisk(voyage, history);
+    return vpf * 3 > (vr + chr * 2) ? 'A' : 'B';
 }
 
 module.exports = {
