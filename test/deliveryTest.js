@@ -8,10 +8,11 @@ deliveryTest('case 1:isRush is ture && deliveryState is MA', t => {
             plusDays: (deliveryTime) => {
                 return deliveryTime;
             }
-        }
+        },
+        isRush:true
     }
 
-    t.is(2, deliveryDate(anOrder, true))
+    t.is(2, deliveryDate(anOrder))
 })
 
 deliveryTest('case 2:isRush is ture && deliveryState is NY', t => {
@@ -21,7 +22,8 @@ deliveryTest('case 2:isRush is ture && deliveryState is NY', t => {
             plusDays: (deliveryTime) => {
                 return deliveryTime;
             }
-        }
+        },
+        isRush:true
     }
 
     t.is(3, deliveryDate(anOrder, true))
@@ -34,10 +36,11 @@ deliveryTest('case 3:isRush is false && deliveryState is MA', t => {
             plusDays: (deliveryTime) => {
                 return deliveryTime;
             }
-        }
+        },
+        isRush:false
     }
 
-    t.is(4, deliveryDate(anOrder, false))
+    t.is(4, deliveryDate(anOrder))
 })
 
 deliveryTest('case 4:isRush is false && deliveryState is ME', t => {
@@ -47,10 +50,11 @@ deliveryTest('case 4:isRush is false && deliveryState is ME', t => {
             plusDays: (deliveryTime) => {
                 return deliveryTime;
             }
-        }
+        },
+        isRush:false
     }
 
-    t.is(5, deliveryDate(anOrder, false))
+    t.is(5, deliveryDate(anOrder))
 })
 
 deliveryTest('case 5:isRush is true && deliveryState is not in the deliveryState', t => {
@@ -60,10 +64,11 @@ deliveryTest('case 5:isRush is true && deliveryState is not in the deliveryState
             plusDays: (deliveryTime) => {
                 return deliveryTime;
             }
-        }
+        },
+        isRush:true
     }
 
-    t.is(4, deliveryDate(anOrder, true))
+    t.is(4, deliveryDate(anOrder))
 })
 
 deliveryTest('case 6:isRush is false && deliveryState is not in the deliveryState', t => {
@@ -73,8 +78,9 @@ deliveryTest('case 6:isRush is false && deliveryState is not in the deliveryStat
             plusDays: (deliveryTime) => {
                 return deliveryTime;
             }
-        }
+        },
+        isRush:false
     }
 
-    t.is(6, deliveryDate(anOrder, false))
+    t.is(6, deliveryDate(anOrder))
 })

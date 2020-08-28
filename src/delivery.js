@@ -30,8 +30,8 @@ function isRushFalse(anOrder){
   return anOrder.placedOn.plusDays(2 + deliveryTime);
 }
 
-function deliveryDate (anOrder, isRush) {
-  if (isRush) {
+function deliveryDate (anOrder) {
+  if (anOrder.isRush) {
     return isRushTrue(anOrder)
   }else {
     return isRushFalse(anOrder)
