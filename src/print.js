@@ -4,7 +4,7 @@ function printOwing(invoice) {
   outstanding = calculateOutstanding(invoice, outstanding);
 
   getDueDate(invoice);
-  return setPrintResult(invoice,outstanding);
+  return setPrintResult(invoice, outstanding);
 }
 
 function calculateOutstanding(invoice, outstanding) {
@@ -14,14 +14,14 @@ function calculateOutstanding(invoice, outstanding) {
   return outstanding;
 }
 
-function setPrintResult(invoice,outstanding) {
-  let result = '***********************\n'
-    + '**** Customer Owes ****\n'
-    + '***********************\n';
-
-  return result += `name: ${invoice.customer}\n`
+function setPrintResult(invoice, outstanding) {
+  let result = `***********************\n`
+    + `**** Customer Owes ****\n`
+    + `***********************\n`
+    + `name: ${invoice.customer}\n`
     + `amount: ${outstanding}\n`
     + `amount: ${invoice.dueDate.toLocaleDateString()}`
+  return result
 }
 
 function getDueDate(invoice) {
