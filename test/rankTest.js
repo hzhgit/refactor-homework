@@ -141,3 +141,28 @@ rankTest('captainHistoryRisk case 3 : given history length = 6 voyage zone = USA
   const result = captainHistoryRisk(voyage, history);
   t.is(result, 2);
 });
+
+rankTest('captainHistoryRisk case 4 : given history length = 4 voyage zone = china && hasChina history = 3', t => {
+  const voyage = {
+    length: 10,
+    zone: 'china'
+  };
+  const history = [
+    {
+      zone: 'china',
+      profit: 5,
+    }, {
+      zone: 'china',
+      profit: 15,
+    }, {
+      zone: 'china',
+      profit: -2,
+    },
+    {
+      zone: 'china',
+      profit: 7,
+    },
+  ];
+  const result = captainHistoryRisk(voyage, history);
+  t.is(result, 4);
+});
