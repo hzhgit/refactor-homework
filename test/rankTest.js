@@ -375,7 +375,7 @@ rankTest('voyageProfitFactor case 6 : given voyage = east-indies , history lengt
   t.is(result, 3)
 });
 
-rankTest('voyageProfitFactor case 7 : given voyage = east-indies , history length = 9,history include china', t => {
+rankTest('voyageProfitFactor case 8 : given voyage = east-indies , history length = 15,history include china', t => {
   const voyage = {
     zone: 'east-indies'
   };
@@ -406,7 +406,26 @@ rankTest('voyageProfitFactor case 7 : given voyage = east-indies , history lengt
   },{
     zone: 'east-indies',
     profit: 5,
+  },{
+    zone: 'east-indies',
+    profit: 5,
+  },{
+    zone: 'east-indies',
+    profit: 5,
+  },{
+    zone: 'east-indies',
+    profit: 5,
+  },{
+    zone: 'east-indies',
+    profit: 5,
+  },{
+    zone: 'east-indies',
+    profit: 5,
+  },{
+    zone: 'east-indies',
+    profit: 5,
   },];
   const result = voyageProfitFactor(voyage, history)
-  t.is(result, 4)
+  t.is(result, 3)
 });
+
