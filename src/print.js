@@ -1,13 +1,17 @@
 function printOwing(invoice) {
   let outstanding = 0;
 
-  // calculate outstanding
-  for (const o of invoice.borderSpacing) {
-    outstanding += o.amount;
-  }
+  outstanding = calculateOutstanding(invoice, outstanding);
 
   getDueDate(invoice);
   return setPrintResult(invoice,outstanding);
+}
+
+function calculateOutstanding(invoice, outstanding) {
+  for (const o of invoice.borderSpacing) {
+    outstanding += o.amount;
+  }
+  return outstanding;
 }
 
 function setPrintResult(invoice,outstanding) {
