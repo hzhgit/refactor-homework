@@ -454,3 +454,25 @@ rankTest('rating case 1 : given voyage = west-indies, length=10 and history=4', 
   const result = rating(voyage, history)
   t.is(result, 'B')
 });
+
+rankTest('rating case 2 : given voyage=china, length=10, history=3', t => {
+  const voyage = {
+      zone: 'china',
+      length: 10,
+  };
+  const history = [
+      {
+          zone: 'east-indies',
+          profit: 5,
+      }, {
+          zone: 'west-indies',
+          profit: 15,
+      }, {
+          zone: 'china',
+          profit: -2,
+      },
+  ];
+
+  const result = rating(voyage, history)
+  t.is(result, 'A')
+});
