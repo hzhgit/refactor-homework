@@ -179,3 +179,15 @@ rankTest('voyageProfitFactor case 1 : given voyage = china , history not include
   const result = voyageProfitFactor(voyage, history)
   t.is(result, 3)
 });
+
+rankTest('voyageProfitFactor case 2 : given voyage = china , history include china', t => {
+  const voyage = {
+      zone: 'china'
+  };
+  const history = [{
+      zone: 'china',
+      profit: 5,
+  }];
+  const result = voyageProfitFactor(voyage, history)
+  t.is(result, 6)
+});
