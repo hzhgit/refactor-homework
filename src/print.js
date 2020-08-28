@@ -9,14 +9,17 @@ function printOwing (invoice) {
     outstanding += o.amount;
   }
 
-  // record due date
-  const today = new Date();
-  invoice.dueDate = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 30);
+  getDueDate(invoice);
 
   // print details
   return result += `name: ${invoice.customer}\n`
     +`amount: ${outstanding}\n`
     +`amount: ${invoice.dueDate.toLocaleDateString()}`
+}
+
+function getDueDate(invoice) {
+  const today = new Date();
+  invoice.dueDate = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 30);
 }
 
 module.exports = { printOwing }
