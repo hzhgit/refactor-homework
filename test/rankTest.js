@@ -279,5 +279,69 @@ rankTest('voyageProfitFactor case 4 : given voyage = china, history length = 13,
   t.is(result, 8)
 });
 
-
+rankTest('voyageProfitFactor case 5 : given voyage = china, history length = 19, history include china', t => {
+  const voyage = {
+    zone: 'china'
+  };
+  const history = [{
+    zone: 'china',
+    profit: -2,
+  }, {
+    zone: 'west-africa',
+    profit: 7,
+  }, {
+    zone: 'west-africa',
+    profit: 7,
+  }, {
+    zone: 'west-africa',
+    profit: 7,
+  }, {
+    zone: 'west-africa',
+    profit: 7,
+  }, {
+    zone: 'west-africa',
+    profit: 7,
+  }, {
+    zone: 'west-africa',
+    profit: 7,
+  }, {
+    zone: 'west-africa',
+    profit: 7,
+  }, {
+    zone: 'west-africa',
+    profit: 7,
+  }, {
+    zone: 'west-africa',
+    profit: 7,
+  }, {
+    zone: 'west-africa',
+    profit: 7,
+  }, {
+    zone: 'west-africa',
+    profit: 7,
+  }, {
+    zone: 'west-africa',
+    profit: 7,
+  }, {
+    zone: 'west-africa',
+    profit: 7,
+  },{
+    zone: 'west-africa',
+    profit: 7,
+  },{
+    zone: 'west-africa',
+    profit: 7,
+  },{
+    zone: 'west-africa',
+    profit: 7,
+  },{
+    zone: 'west-africa',
+    profit: 7,
+  },{
+    zone: 'west-africa',
+    profit: 7,
+  },];
+  const result = voyageProfitFactor(voyage, history)
+  t.is(result, 7)
+});
 
